@@ -225,6 +225,37 @@ article .body p {
     color: var(--ink);
 }
 
+.code-shell {
+    position: relative;
+    margin: 0 0 1.2rem;
+}
+
+.code-shell pre {
+    margin-bottom: 0;
+    padding-top: 2.3rem;
+}
+
+.copy-code-btn {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    border: 1px solid rgba(34, 211, 238, 0.35);
+    background: rgba(2, 10, 16, 0.95);
+    color: var(--ink);
+    border-radius: 6px;
+    padding: 0.2rem 0.55rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.66rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.copy-code-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
 .site-shell {
     min-height: 100dvh;
     display: flex;

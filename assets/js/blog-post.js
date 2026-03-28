@@ -18,6 +18,37 @@
         }
     }
 
+    function attachCopyButtons() {
+        bodyEl.querySelectorAll('pre').forEach(function (pre) {
+            if (pre.parentElement && pre.parentElement.classList.contains('code-shell')) {
+                return;
+            }
+
+            var shell = document.createElement('div');
+            shell.className = 'code-shell';
+            pre.parentNode.insertBefore(shell, pre);
+            shell.appendChild(pre);
+
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'copy-code-btn';
+            btn.textContent = 'Copy';
+            shell.appendChild(btn);
+
+            btn.addEventListener('click', function () {
+                var codeEl = pre.querySelector('code');
+                var text = codeEl ? codeEl.textContent : pre.textContent;
+                if (!text) return;
+                navigator.clipboard.writeText(text).then(function () {
+                    btn.textContent = 'Copied';
+                    setTimeout(function () {
+                        btn.textContent = 'Copy';
+                    }, 1200);
+                });
+            });
+        });
+    }
+
     function renderPost(meta, markdown) {
         titleEl.textContent = meta.title || 'Untitled Post';
         dateEl.textContent = meta.date || '';
@@ -37,6 +68,8 @@
                 window.hljs.highlightElement(block);
             });
         }
+
+        attachCopyButtons();
     }
 
     function fetchPost(meta) {

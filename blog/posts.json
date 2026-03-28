@@ -22,5 +22,11 @@
     "title": "awesome-greek-tech-jobs: Mapping Tech Hiring in Greece",
     "date": "2026-02-12T10:00:00Z",
     "excerpt": "A short look at the open-source map of tech hiring in Greece."
+  },
+  {
+    "slug": "bigquery-ui-cli-playbook",
+    "title": "BigQuery UI + CLI Playbook: Faster Queries, Lower Cost",
+    "date": "2026-03-01T09:30:00Z",
+    "excerpt": "Practical BigQuery query patterns, dry runs, and CLI commands for cost-aware analytics."
   }
 ]
