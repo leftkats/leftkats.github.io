@@ -1,0 +1,131 @@
+/* Blog index + post pages */
+body {
+    min-height: 100dvh;
+}
+
+.wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 38rem;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 5vw, 2.5rem);
+}
+
+header {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    margin: 0 0 0.5rem;
+}
+
+.crumb {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}
+
+.crumb a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.crumb a:hover {
+    color: var(--accent);
+}
+
+#post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#post-list li {
+    margin-bottom: 1.5rem;
+}
+
+#post-list a {
+    font-size: 0.95rem;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+#post-list a:hover {
+    color: var(--accent);
+}
+
+#post-list time {
+    display: block;
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.35rem;
+}
+
+#post-list p {
+    margin: 0.4rem 0 0;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.55;
+}
+
+.empty {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+body.blog-post {
+    line-height: 1.7;
+}
+
+.back {
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.back a {
+    color: var(--muted);
+    text-decoration: none;
+    border-bottom: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.back a:hover {
+    color: var(--accent);
+}
+
+article header h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.65rem, 4vw, 2.1rem);
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    line-height: 1.2;
+    margin: 0 0 0.5rem;
+}
+
+article time {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+article .body {
+    margin-top: 2rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
+article .body p {
+    margin: 0 0 1rem;
+}

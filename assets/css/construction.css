@@ -1,0 +1,261 @@
+/* Under construction — root landing */
+body.uc {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.uc-main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1.5rem, 5vw, 3rem);
+    position: relative;
+    z-index: 1;
+}
+
+.uc-panel {
+    width: 100%;
+    max-width: 26rem;
+    text-align: center;
+    position: relative;
+    padding: clamp(2rem, 6vw, 3rem) clamp(1.5rem, 4vw, 2.25rem);
+    background: color-mix(in srgb, var(--card) 75%, transparent);
+    border: 1px solid color-mix(in srgb, var(--gold-mid) 22%, var(--line));
+    box-shadow:
+        0 24px 64px var(--shadow),
+        0 0 0 1px color-mix(in srgb, var(--gold-mid) 8%, transparent) inset;
+    animation: uc-rise 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0;
+    transform: translateY(12px);
+}
+
+@keyframes uc-rise {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.uc-svg {
+    width: 100%;
+    max-width: 14rem;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    display: block;
+    color: color-mix(in srgb, var(--accent) 55%, var(--muted));
+}
+
+.uc-svg rect {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1;
+    stroke-dasharray: 6 10;
+    animation: uc-dash 24s linear infinite;
+}
+
+@keyframes uc-dash {
+    to {
+        stroke-dashoffset: -400;
+    }
+}
+
+.uc-kicker {
+    font-size: 0.62rem;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--muted) 88%, transparent);
+    margin: 0 0 1rem;
+}
+
+.uc-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.85rem, 5.5vw, 2.35rem);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    color: var(--welcome-fg);
+    line-height: 1.2;
+    margin: 0 0 1rem;
+    text-shadow: 0 1px 28px color-mix(in srgb, var(--bg) 35%, transparent);
+}
+
+.uc-lede {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+    margin: 0 0 1.5rem;
+    max-width: 22rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.uc-pulse {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.75rem;
+}
+
+.uc-pulse::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 0 14px color-mix(in srgb, var(--accent) 50%, transparent);
+    animation: uc-blink 1.4s ease-in-out infinite;
+}
+
+@keyframes uc-blink {
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.35;
+        transform: scale(0.85);
+    }
+}
+
+.uc-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.65rem 1rem;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+}
+
+.uc-nav a {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    padding: 0.45rem 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--gold-mid) 28%, transparent);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.uc-nav a:hover,
+.uc-nav a:focus-visible {
+    color: var(--accent);
+    border-color: color-mix(in srgb, var(--gold-mid) 55%, transparent);
+    outline: none;
+}
+
+.uc-nav .uc-plain {
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.45rem 0;
+    border-bottom: 1px solid color-mix(in srgb, var(--gold-mid) 18%, transparent);
+    cursor: default;
+    user-select: none;
+}
+
+.uc-quiet {
+    font-size: 0.68rem;
+    color: color-mix(in srgb, var(--muted) 92%, transparent);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.uc-quiet code {
+    font-family: ui-monospace, monospace;
+    font-size: 0.9em;
+    color: color-mix(in srgb, var(--ink) 75%, var(--muted));
+}
+
+.uc-footer {
+    text-align: center;
+    padding: 1.25rem 1rem 1.75rem;
+    border-top: 1px solid var(--line);
+    font-size: 0.6rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: color-mix(in srgb, var(--muted) 85%, transparent);
+    position: relative;
+    z-index: 1;
+}
+
+.uc-footer .uc-footer-note {
+    color: var(--muted);
+    margin: 0 0.35rem;
+    font-size: inherit;
+    letter-spacing: inherit;
+}
+
+.uc-footer a {
+    color: var(--accent);
+    text-decoration: none;
+    margin: 0 0.35rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--gold-mid) 35%, transparent);
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.uc-footer a:hover {
+    color: color-mix(in srgb, var(--accent) 90%, white);
+    border-bottom-color: color-mix(in srgb, var(--gold-mid) 55%, transparent);
+}
+
+.uc-social {
+    position: fixed;
+    bottom: clamp(1rem, 3vw, 1.75rem);
+    right: clamp(1rem, 3vw, 1.75rem);
+    z-index: 40;
+    display: flex;
+    gap: 0.65rem;
+}
+
+.uc-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: var(--card);
+    border: 1px solid color-mix(in srgb, var(--gold-mid) 28%, var(--line));
+    color: var(--muted);
+    box-shadow: 0 8px 28px var(--shadow);
+    transition: color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.uc-social a:hover,
+.uc-social a:focus-visible {
+    color: #ff5500;
+    border-color: rgba(255, 85, 0, 0.45);
+    outline: none;
+}
+
+.uc-social svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .uc-panel {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .uc-svg rect {
+        animation: none;
+    }
+
+    .uc-pulse::before {
+        animation: none;
+        opacity: 0.75;
+    }
+}
