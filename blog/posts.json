@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "test-post",
+    "title": "JSON to NDJSON in One Command",
+    "date": "2025-11-07T09:00:00Z",
+    "excerpt": "A quick note on converting JSON arrays to NDJSON using jq."
+  },
+  {
+    "slug": "ipython-autoreload-magic",
+    "title": "AutoReload Magic: Seamless Module Reloading in IPython",
+    "date": "2025-12-10T11:30:00Z",
+    "excerpt": "Set up IPython to automatically reload changed modules at startup."
+  },
+  {
+    "slug": "issue-finder-action",
+    "title": "Building issue-finder: A Multi-Repo Issue Dashboard Action",
+    "date": "2026-01-19T10:00:00Z",
+    "excerpt": "Why I built a GitHub Action to aggregate labeled issues across multiple repositories."
+  },
+  {
+    "slug": "awesome-greek-tech-jobs",
+    "title": "awesome-greek-tech-jobs: Mapping Tech Hiring in Greece",
+    "date": "2026-02-12T10:00:00Z",
+    "excerpt": "A short look at the open-source map of tech hiring in Greece."
+  }
+]
